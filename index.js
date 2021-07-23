@@ -95,7 +95,29 @@ function getAllKinds(animals) {
   ];
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
-function filterByCountMinimum(animals, minimum) {}
+function filterByCountMinimum(animals, minimum) {
+  // input: animals in an array of objects and 
+  //        minimum is a number that represent the lowest count of animals to include
+  // output: return an array of objects that have a count equal to or greater than the minimum
+
+  // problem: how can I filter out the animals array to one get animals that have a count equal to or greater than the minimum
+  // solution: 1. loop 2. >= arthmetic operator 3. if conditional statement 3. otherwise return an empty arr
+  // declare a variable cacheArr and assign it an empty array
+  let cacheArr = []
+  // loop through the animals array
+  for (let i = 0; i < animals.length; i++) {
+      // declare a variable called animal and assign it an index from the array
+      const animal = animals[i]
+      // if the animal 'count' is greater than or equal to minimum
+      if (animal.count >= minimum) {
+         // return the array with objects that are greater than or equal to minimum
+         cacheArr.push(animal)
+      }
+  }
+  
+  // return the array of objects or an empty arr
+  return cacheArr
+}
 
 /**
  * FUNCTION DESCRIPTION
