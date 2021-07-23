@@ -58,7 +58,25 @@ function getTotalCount(animals) {
  * getAllKinds(animals); //> ["Pig", "Cow", "Chicken", "Horse", "Dog", "Cat"]
  * getAllKinds([]); //> [] // returns empty array if input array is empty
  */
-function getAllKinds(animals) {}
+function getAllKinds(animals) {
+  // input: animals is a array of objects
+  // output: return an array of strings where each string is a kind of animal
+
+  // problem: how can we push the value of the key: kind into an empty array?
+  // solution: 1. loop 2. .push() into an empty array
+  // variable: declare a variable cache array and assign it an empty string
+  let cacheArr = []
+  // loop through the animals array
+  for (let i = 0; i < animals.length; i++) {
+      // declare a variable called animal and assign it an index from the array
+      const animal = animals[i]
+      // push the value of the key: kind into the cache array 
+      cacheArr.push(animal.kind)
+  }
+
+  // return the array of strings 
+  return cacheArr;
+}
 
 /**
  * FUNCTION DESCRIPTION
