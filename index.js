@@ -26,7 +26,25 @@ const animals = [
  * getTotalCount(animals); //> 28
  * getTotalCount([]); //> 0 // returns 0 if the input array is empty
  */
-function getTotalCount(animals) {}
+function getTotalCount(animals) {
+  // input: animals is an array of objects
+  // output: return a number that respresents the total animal 'count'
+  //         return 0 if the array is empty
+
+  // problem: how can we add up each of the 'count' key of each animal in the 
+  // solution: 1. Loop 2. += arthmetic operator 
+  // variable: declare a variable called total animal count and assign it to the default value, 0
+  let totalAnimalCount = 0;
+  // loop through the animals array of objects
+  for (let i = 0; i < animals.length; i++) {
+    // declare a variable called animal and assign it an index from the array
+    const animal = animals[i];
+    // reaasign the total animal count by assessing the count in each object 
+    totalAnimalCount += animal.count
+  }
+  // return the the total animal count
+  return totalAnimalCount;
+}
 
 /**
  * FUNCTION DESCRIPTION
