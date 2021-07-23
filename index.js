@@ -114,7 +114,7 @@ function filterByCountMinimum(animals, minimum) {
          cacheArr.push(animal)
       }
   }
-  
+
   // return the array of objects or an empty arr
   return cacheArr
 }
@@ -131,7 +131,40 @@ function filterByCountMinimum(animals, minimum) {
  * getMostCommonAnimal(animals); //> { kind: "Chicken", count: 11 }
  * getMostCommonAnimal([]); //> null // returns null if the input is empty
  */
-function getMostCommonAnimal(animals) {}
+function getMostCommonAnimal(animals) {
+  // input: animals is an arr of obj
+  // output: returns an object from animal arr that has the highest `count`
+  
+  // problem: how can you find the object with the higest count 
+  // solution: 1. loop 2. compare two `counts`
+  
+  // edge case: if the array is empty 
+  if (animals.length === 0) {
+    // return null
+    return null
+}
+  // variable: declare a variable highest count and assign it to index 0 in the animals array
+  let higestCount = animals[0]
+  // loop through the animals arr
+  for (let i = 0; i < animals.length; i++) {
+      // declare a variable called animal and assign it an index from the array
+      const animal = animals[i]
+      // if highest count `count` is less than animal `count` we are looping 
+      // (comparing oranges to oranges)
+      if (higestCount.count < animal.count) {
+          // reassign the highest count to the animal object
+          higestCount = animal
+          
+          // edge case: if more than one object have the same highest `count`,
+      } else if (higestCount === animal.count) {
+          // do not reaasign the highest `count` to this current animal ie continue looping
+          continue
+      }
+  }
+
+  // return higestCount 
+  return higestCount
+}
 
 // Do not change anything below this line.
 module.exports = {
